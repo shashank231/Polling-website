@@ -1,0 +1,22 @@
+{%  extends 'namo/main.html' %}
+{% block content %}
+
+<br>
+<h2 style="border-bottom: 3px solid red;
+  background-color: khaki;">Delete Poll</h2>
+<br>
+<div class="container" style="width: 600px;
+  border: 15px solid green;
+  padding: 10px;
+  margin: 20px;">
+<h3>Are you sure you want to delete "{{poll}}"?</h3>
+    <br>
+<form action="{% url 'delete' poll.id %}" method="POST" >
+    {% csrf_token %}
+    <a class="btn btn-primary" href="{% url 'index' %}" role="button">Cancel</a>
+    <input class="btn btn-danger" type="submit" name="Confirm">
+</form>
+</div>
+
+
+{% endblock %}

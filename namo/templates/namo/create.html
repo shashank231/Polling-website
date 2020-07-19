@@ -1,0 +1,32 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+
+<br>
+<h3 style="border-bottom: 3px solid red;
+  background-color: khaki;">Create</h3>
+
+<div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body" style="background-color: peachpuff;">
+			<form action="" method="POST">
+				{% csrf_token %}
+				<h4>{{form.qnum.label}}
+					{{form.qnum}}</h4>
+				<h4>{{form.que.label}}
+					{{form.que}}</h4>
+				<h4>{{form.opt1.label}}
+					{{form.opt1}}</h4>
+				<h4>{{form.opt2.label}}
+					{{form.opt2}}</h4>
+				<h4>{{form.opt3.label}}
+					{{form.opt3}}</h4>
+				<input type="submit" name="Submit" style="color: darkred;">
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+
+
+{% endblock %}

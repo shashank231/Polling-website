@@ -1,0 +1,19 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+{% load static %}
+<br>
+<h2 style="border-bottom: 3px solid red;
+  background-color: khaki;">Polling-website</h2>
+<br>
+<h5> This is a basic polling website where users can put on their questions with 3 option and then
+    an opinion poll would be generated based on the no. of votes recieved by every option.
+    It is really intresting to see different polls and opinions.</h5>
+
+<br>
+<center>
+    <img src="{% static 'images/intro.jpg' %}" alt="..." class="img-thumbnail" style="width:370px;height:320px;">
+</center>
+<br>
+<center><a class="btn btn-warning btn-lg" href="{% url 'index' %}">Home</a></center>
+
+{% endblock %}

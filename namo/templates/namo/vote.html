@@ -1,0 +1,36 @@
+{% extends 'namo/main.html' %}
+{% block content %}
+<br>
+<h2 style="border-bottom: 3px solid red;
+  background-color: khaki;">Vote</h2>
+<br>
+<div class="container mt-4" >
+    <form action="{% url 'result' quev.id %}" method="POST">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-body">
+                <h3>Q.{{quev.que}}</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="option" id="exampleRadios1" value="{{quev.opt1}}">
+                            <label class="form-check-label" for="exampleRadios1">
+                              {{quev.opt1}}
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="radio" name="option" id="exampleRadios1" value="{{quev.opt2}}">
+                            <label class="form-check-label" for="exampleRadios1">
+                              {{quev.opt2}}
+                            </label>
+                            <br>
+                            <input class="form-check-input" type="radio" name="option" id="exampleRadios1" value="{{quev.opt3}}">
+                            <label class="form-check-label" for="exampleRadios1">
+                              {{quev.opt3}}
+                            </label>
+                    </div>
+                <br>
+                <button type="submit" class="btn btn-success">Vote</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
