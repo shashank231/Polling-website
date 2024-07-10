@@ -5,7 +5,7 @@ def index(request):
     polls = Createpoll.objects.all()
 
     context = {'polls': polls}
-    return render(request, 'namo/index.html', context)
+    return render(request, 'app1/index.html', context)
 
 def create(request):
     form = CreatepollForm()
@@ -16,13 +16,13 @@ def create(request):
             return redirect('index')
 
     context = {'form': form}
-    return render(request, 'namo/create.html', context)
+    return render(request, 'app1/create.html', context)
 
 def vote(request, pk):
     quev = Createpoll.objects.get(id=pk)
 
     context = {'quev': quev}
-    return render(request, 'namo/vote.html', context)
+    return render(request, 'app1/vote.html', context)
 
 def result(request, pk):
     que = Createpoll.objects.get(id=pk)
@@ -39,12 +39,12 @@ def result(request, pk):
         que.save()
 
     context = {'que': que}
-    return render(request, 'namo/result.html', context)
+    return render(request, 'app1/result.html', context)
 
 def viewresult(request, pk):
     que = Createpoll.objects.get(id=pk)
     context = {'que': que}
-    return render(request, 'namo/result.html', context)
+    return render(request, 'app1/result.html', context)
 
 def delete(request, pk):
     poll = Createpoll.objects.get(id=pk)
@@ -53,8 +53,8 @@ def delete(request, pk):
         return redirect('/')
 
     context = {'poll': poll}
-    return render(request, 'namo/delete.html', context)
+    return render(request, 'app1/delete.html', context)
 
 def intro(request):
-    return render(request, 'namo/intro.html')
+    return render(request, 'app1/intro.html')
 
