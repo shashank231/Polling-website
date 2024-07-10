@@ -11,3 +11,4 @@ python manage.py migrate
 
 python manage.py runserver
 
+![static/images/project](pp1.png)
